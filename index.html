@@ -6,63 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página principal SmokeClub</title>
     <!--Enlace css-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="body-grilla">
     <!--Encabezado Barra navegadora-->
-    <header class="header-index">
+    <header>
         <nav>
             <!--Lista sin orden-->
             <ul>
-                <li><a class="enlaces-nav" href="">Menú</a></li>
+                <li class="submenu"><a class="enlaces-nav" href="#">Menú</a>
+                    <ul>
+                        <li><a class="enlaces-nav" href="./pages/catalogo.html">Catálogo</a></li>
+                        <li><a class="enlaces-nav" href="./pages/kit1.html">Kit 1</a></li>
+                        <li><a class="enlaces-nav" href="./pages/somos.html">Somos</a></li>
+                    </ul>
+                </li>
                 <li><a href="./index.html"><h1> SmokeClub </h1></a></li>
-                <li><a class="enlaces-nav" href="">Carro</a></li>
+                <li><a class="enlaces-nav" href="./pages/somos.html">Carro</a></li>
             </ul>
-
         </nav>
     </header>
 
     <!--Seccion principal con el concepto de la tienda-->
     <main> 
-        <div>
+        <div class="div-index">
             <!--enlace imagen local del logo-->
-            <img src="../images/SmokeClub.jpeg" alt="Imagen con concepto de la tienda">
+            <img src="./images/SmokeClub.jpeg" alt="Imagen con concepto de la tienda">
         </div>
         <br>
-        <h2>Explora nuestro catálogo</h2>
-
+        <h2 class="h2-index">Explora nuestro catálogo</h2>
         <!--Seccion catalogo en pagina principal-->
         <section class="section-catalogo">
             <!--articulos con link a los productos-->
             <article class="art-index">
-                <img src="../images/tabacos.jpeg" class="img-catalogo" alt="Tabacos">
+                <img src="./images/tabacos.jpeg" class="img-catalogo" alt="Tabacos">
+                <a href="./pages/tabacos.html"></a>
                 <h3>Tabacos</h3>
             </article>
             <!--Producto de ejemplo papelillos-->
             <article class="art-index">
-                <img src="../images/papelillos.jpeg" class="img-catalogo" alt="Papelillos">
+                <img src="./images/papelillos.jpeg" class="img-catalogo" alt="Papelillos">
+                <a href="./pages/papelillos.html"></a>
                 <h3>Papelillos</h3></a>
             </article>
             <article class="art-index">
-                <img src="../images/pipas.jpeg" class="img-catalogo" alt="Pipas">
+                <img src="./images/pipas.jpeg" class="img-catalogo" alt="Pipas">
+                <a href="./pages/pipas.html"></a>
                 <h3>Pipas</h3>
             </article>
             <br>
             <article class="art-index">
-                <img src="../images/encendedores.jpeg" class="img-catalogo" alt="Encendedores">
+                <img src="./images/encendedores.jpeg" class="img-catalogo" alt="Encendedores">
+                <a href="./pages/encendedores.html"></a>
                 <h3>Encendedores</h3>
             </article>
             <article class="art-index">
-                <img src="../images/filtros.jpeg" class="img-catalogo" alt="Filtros">
+                <img src="./images/filtros.jpeg" class="img-catalogo" alt="Filtros">
+                <a href="./pages/filtros.html"></a>
                 <h3>Filtros</h3>
             </article>
             <article class="art-index">
-                <img src="../images/moledores.jpeg" class="img-catalogo" alt="Moledores">
+                <img src="./images/moledores.jpeg" class="img-catalogo" alt="Moledores">
+                <a href="./pages/moledores.html"></a>
                 <h3>Moledores</h3>
             </article>
             <article class="art-index">
-                <img src="../images/Kit1.jpg" class="img-catalogo" alt="Kits">
-                <a href="./productos.html"><h3>Kits</h3></a>
+                <img src="./images/Kit1.jpg" class="img-catalogo" alt="Kits">
+                <a href="./pages/kits.html">
+                <h3>Kits</h3></a>
             </article>
         </section>
     </main>

@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 /*Con esto 1 rem vale 10 px*/
 html{
@@ -26,59 +27,68 @@ h3{
     text-align: center; 
 }
 
-
-/*Estilo general enlaces
-    Enlaces color negro sin subrayado*/
-a{
-    color: black;
-    text-decoration: none;
-}
-/*Estilo barra navegadora color de fondo*/
-nav{
-    background-color: #112624;
-}
-/*items barra navegadora centrados en fila*/
-ul{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-/*Lista barra navegadora desplegada en horizontal*/
-li{
-    list-style: none;
-    padding: 2rem;
-}
-/*Especificación enlaces dentro de la barra navegadora*/
-.enlaces-nav{
-    color: #D9D491;
-    font-size: 2rem;
-}
-/*contenido principal del main centrado*/
-div{
-    text-align: center;
-}
-
-
-
-
-/*grilla*/
+/*GRILLA*/
 #body-grilla{
     display: grid;
-    grid-template-rows: 0.3fr 2fr 1fr;
-    grid-template-columns: 1fr;
 
     grid-template-areas: 
     'header'
     'main'
     'footer';
 }
+
+/*HEADER*/
 header{
     grid-area: header;
+    height: auto;
 }
+/*Estilo barra navegadora color de fondo*/
+nav{
+    background-color: #112624;
+}
+/*items barra navegadora centrados en fila*/
+nav ul {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+/*Lista barra navegadora desplegada en horizontal*/
+nav ul li {
+    list-style: none;
+    padding: 2rem;
+}
+
+.submenu ul{
+    display: none;
+}
+.submenu:hover > ul {
+    display: block;
+    color: #D9D491;
+    font-size: 2rem;
+}
+/*Especificación enlaces dentro de la barra navegadora*/
+.enlaces-nav{
+    color: #D9D491;
+    font-size: 2rem;
+}
+/*Estilo general enlaces
+    Enlaces color negro sin subrayado*/
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+/*MAIN*/
 main{
     grid-area: main;
 }
+/*contenido principal del main centrado*/
+div{
+    text-align: center;
+}
+/*INDEX*/
 .section-catalogo{
     display: flex;
     flex-direction: row;
@@ -86,10 +96,6 @@ main{
     justify-content:space-around;
     align-items:center;
 }
-footer{
-    grid-area: footer;
-}
-
 /*articulos del catalogo*/
 .art-index{
     width: 40rem;
@@ -111,31 +117,33 @@ footer{
     height: 21rem;
 }
 
-
-
+/*Kit especial 1*/
 /*tamaño imagen de un solo producto*/
 .img-prod{
-    width: 70rem;
-    height: 50rem;
-    margin: 2rem 2rem 2rem 2rem;
+    max-width: 60%;
+    height: auto;
     border: 1rem solid #112624;
 }
 /*disposicion del texto descriptivo*/
 .div-descp{
     display: flex;
     justify-content: center;
+    padding: 2rem;
 }
 .p-descp{
-    width: 70rem;
-    height: 50rem;
+    width: 100%;
     font-size: 2rem;
 }
 
 
-/*Estilo pie de página con fondo con gradiente que lo diferencie*/
+
+/*FOOTER*/
 footer{
+    grid-area: footer;
+    /*Estilo pie de página con fondo con gradiente que lo diferencie*/
     padding: 2rem;
-}
+    height: 60rem;
+} 
 /*tamaño del mapa*/
 iframe{
     width: 35rem;
@@ -147,22 +155,81 @@ iframe{
 
 
 /*Responsive*/
-@media screen and (max-width: 480px) {
-    #body-grilla{
-        grid-template-rows: 0.5fr 2fr 0.5fr;
+@media screen and (max-width: 768px){
+/*Grids areas que dan de la forma auto*/
+
+    h2 {
+        max-width: 100%;
+        height: auto;
+        font-size: 2rem;
     }
-    .art-index{
-        width: 30rem;
-        height: 30rem;
+    header{
+        height: auto;
+        width: auto;
     }
-    .img-catalogo{
-        width: 20rem;
-        height: 16rem;
-        margin: 1.5rem;
+    nav {
+        max-width: 100%;
+        height: auto;
+    }
+    /*La disposicion del navegador cambia a columna*/
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    /*La disposicion del submenú cambia a fila*/
+    .submenu:hover > ul {
+        display: flex;
+        flex-direction: row;
+        color: #D9D491;
+        font-size: 1.5rem;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    /*Menú con display flex en una sola columna*/
+    main{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /*La seccion del catalogo ahora solo es una columna con los productos*/
+    .section-catalogo {
+        flex-direction: column;
+        align-items: center;
+    }
+    .art-index {
+        width: auto;
+        height: auto;
+    }
+    .img-catalogo {
+        width: 80%;
+        height: auto;
+        margin: 1rem 0;
+        border: 0.4rem solid #112624;
+        transition: all 1s;
     }
     .img-catalogo:hover{
-        width: 21rem;
-        height: 17rem;
+        width: 83%;
+        height: auto;
+    }
+    /*Seccion de forma general se ordena con flex column*/
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    footer{
+        width: auto;
+    }
+    iframe{
+        max-width: 50%;
+        max-height: 60%;
     }
 }
 
